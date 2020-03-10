@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class MySQLToUnity : MonoBehaviour {
     private Text sqlText;
+    private string sql = "";
     // Start is called before the first frame update
     void Start() {
         sqlText=GameObject.Find("SQLText").GetComponent<Text>();
@@ -15,7 +16,7 @@ public class MySQLToUnity : MonoBehaviour {
         try {
             msc.Open();
             Debug.Log("已经建立连接");
-            string sql = "select * from users where user_id=1";
+            sql = "select * from users where user_id=1";
             MySqlCommand command = new MySqlCommand(sql, msc);
             MySqlDataReader dataReader = command.ExecuteReader();
             if (dataReader.Read()) {
@@ -34,6 +35,6 @@ public class MySQLToUnity : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
