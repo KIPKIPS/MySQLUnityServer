@@ -73,3 +73,30 @@ Oracle、SQL Server、MySQL
 数据修改
 
 数据查询
+
+10，数据类型
+	字符串 - char varchar(length) - string
+	整数 - int - int
+	小数 - float - float
+	日期时间 - date - DateTime
+	
+	默认值
+	可以为NULL
+	自动增长
+11，MySQL控制台
+	help;
+	quit;
+	show databases;
+	use databasexxx;
+	show tables;
+	select * from tablename;
+12，MySQL Workbench全面功能学习
+	http://dev.mysql.com/doc/workbench/en/
+	
+	添加表
+	添加数据
+	数据的查询
+	数据的更改
+	数据的提交
+	添加数据
+	修改表结构查看表结构 alter table
