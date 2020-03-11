@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class UserLogIn : MonoBehaviour
 {
-    public Text userNameInput;
-    public Text passwordInput;
+    public InputField userNameInput;
+    public InputField passwordInput;
     public Image mes;
     public string host;//IP地址
     public string port;//端口号
