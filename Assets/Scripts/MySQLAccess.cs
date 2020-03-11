@@ -12,6 +12,10 @@ public class MySqlAccess {
     private static string userName;//用户名
     private static string password;//密码
     private static string databaseName;//数据库名称
+
+    enum Operate {
+        Select, Insert
+    }
     /// <summary>
     /// 构造方法
     /// </summary>
@@ -30,7 +34,7 @@ public class MySqlAccess {
     // 打开数据库
     public void OpenSql() {
         try {
-            string mySqlString = 
+            string mySqlString =
                 "Database=" + databaseName + ";DataSource=" + host + ";User=" + userName + ";Password=" + password + ";port=" + port + ";";
             mySqlConnection = new MySqlConnection(mySqlString);
             UnityEngine.Debug.Log("连接成功");
@@ -74,7 +78,7 @@ public class MySqlAccess {
         for (int i = 1; i < whereColumnName.Length; i++) {
             query += " and " + whereColumnName[i] + " " + operation[i] + " '" + value[i] + "'";
         }
-        return QuerySet(query);
+        return QuerySet(query, Operate.Select);
 
     }
 
@@ -83,18 +87,43 @@ public class MySqlAccess {
     /// </summary>
     /// <param name="sqlString">sql语句</param>
     /// <returns></returns>
-    private DataSet QuerySet(string sqlString) {
+    private DataSet QuerySet(string sqlString, Operate op) {
+        
         if (mySqlConnection.State == ConnectionState.Open) {
             DataSet ds = new DataSet();
             MySqlDataAdapter mySqlAdapter = new MySqlDataAdapter(sqlString, mySqlConnection);
             mySqlAdapter.Fill(ds);
-            mySqlAdapter.Dispose();
-            if (ds.Tables[0].Rows.Count > 0) {
-                return ds;
+            switch (op) {
+                case Operate.Select: return ds.Tables[0].Rows.Count > 0 ? ds : null;
+                case Operate.Insert:return null;
             }
-
-            return null;
+            mySqlAdapter.Dispose();
         }
         return null;
+    }
+
+
+    public bool Insert(string tableName, string[] items, string[] value) {
+        DataSet ds = QuerySet("Select user_id from users where user_name='" + value[0] + "'", Operate.Select);
+        if (ds != null) {
+            return false;
+        }
+        else {
+            if (items.Length != value.Length) {
+                throw new Exception("输入不正确：" + "要查询的条件、条件操作符、条件值 的数量不一致！");
+            }
+            string query = "Insert Into " + tableName + " ( " + items[0];
+            for (int i = 1; i < items.Length; i++) {
+                query += "," + items[i];
+            }
+            query += " ) Values ( '" + value[0] + "'";
+            for (int i = 1; i < value.Length; i++) {
+                query += ",'" + value[i] + "'";
+            }
+            query += " )";
+            UnityEngine.Debug.Log(query);
+            QuerySet(query, Operate.Insert);
+        }
+        return true;
     }
 }
