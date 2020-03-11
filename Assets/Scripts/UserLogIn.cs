@@ -8,20 +8,13 @@ public class UserLogIn : MonoBehaviour
 {
     public Text userNameInput;
     public Text passwordInput;
-
     public Image mes;
-    //IP地址
-    public string host;
-    //端口号
-    public string port;
-    //用户名
-    public string userName;
-    //密码
-    public string password;
-    //数据库名称
-    public string databaseName;
-    //封装好的数据库类
-    MySqlAccess mysql;
+    public string host;//IP地址
+    public string port;//端口号
+    public string userName;//用户名
+    public string password;//密码
+    public string databaseName;//数据库名称
+    MySqlAccess mysql;//封装好的数据库类
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +28,7 @@ public class UserLogIn : MonoBehaviour
     }
 
     public void OnLogInBtnClick() {
+        mysql.CloseSql();
         mysql.OpenSql();
         //获取数据
         DataSet ds = mysql.Select("users", new string[] { "user_password","user_id" }, new string[] { "user_name"}, new string[] { "="}, new string[] { userNameInput.text,});

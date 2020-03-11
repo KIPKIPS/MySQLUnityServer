@@ -12,7 +12,6 @@ public class MySqlAccess {
     private static string userName;//用户名
     private static string password;//密码
     private static string databaseName;//数据库名称
-
     /// <summary>
     /// 构造方法
     /// </summary>
@@ -87,23 +86,14 @@ public class MySqlAccess {
     private DataSet QuerySet(string sqlString) {
         if (mySqlConnection.State == ConnectionState.Open) {
             DataSet ds = new DataSet();
-            MySqlCommand command = new MySqlCommand(sqlString, mySqlConnection);
-            if (command.ExecuteReader().IsClosed==false) {
-                command.ExecuteReader().Close();
-                UnityEngine.Debug.Log("关闭");
-            }
-            MySqlDataReader dataReader = command.ExecuteReader();
-            if (dataReader.Read()) {
-                MySqlDataAdapter mySqlAdapter = new MySqlDataAdapter(sqlString, mySqlConnection);
-                mySqlAdapter.Fill(ds);
-                dataReader.Close();
-                command.Dispose();
-                mySqlAdapter.Dispose();
+            MySqlDataAdapter mySqlAdapter = new MySqlDataAdapter(sqlString, mySqlConnection);
+            mySqlAdapter.Fill(ds);
+            mySqlAdapter.Dispose();
+            if (ds.Tables[0].Rows.Count > 0) {
                 return ds;
             }
-            else {
-                return null;
-            }
+
+            return null;
         }
         return null;
     }
