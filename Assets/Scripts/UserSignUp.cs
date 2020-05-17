@@ -26,7 +26,7 @@ public class UserSignUp : UserLogIn {
             mysql.OpenSql();
             //插入数据
             bool succ = mysql.Insert("users", new[] { "user_name", "user_password" }, new[] { userNameInput.text, passwordInput.text });
-            Debug.Log(succ ? "注册成功,请重新登录" : "注册失败,用户名已存在,请重新注册");
+            //Debug.Log(succ ? "注册成功,请重新登录" : "注册失败,用户名已存在,请重新注册");
             if (succ) {
                 Message("注册成功,请登录");
             }

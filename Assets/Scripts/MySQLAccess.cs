@@ -40,12 +40,10 @@ public class MySqlAccess {
             UnityEngine.Debug.Log("连接成功");
             //if(mySqlConnection.State == ConnectionState.Closed)
             mySqlConnection.Open();
-
         }
         catch (Exception e) {
             throw new Exception("服务器连接失败，请重新检查MySql服务是否打开。" + e.Message.ToString());
         }
-
     }
     // 关闭数据库
     public void CloseSql() {
