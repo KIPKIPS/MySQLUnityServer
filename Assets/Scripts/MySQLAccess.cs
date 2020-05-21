@@ -35,14 +35,18 @@ public class MySqlAccess {
     public void OpenSql() {
         try {
             string mySqlString =
-                "Database=" + databaseName + ";DataSource=" + host + ";User=" + userName + ";Password=" + password + ";port=" + port + ";";
+                "Database=" + databaseName + 
+                ";DataSource=" + host + 
+                ";User=" + userName + 
+                ";Password=" + password + 
+                ";port=" + port + ";";
             mySqlConnection = new MySqlConnection(mySqlString);
             UnityEngine.Debug.Log("连接成功");
             //if(mySqlConnection.State == ConnectionState.Closed)
             mySqlConnection.Open();
         }
         catch (Exception e) {
-            throw new Exception("服务器连接失败，请重新检查MySql服务是否打开。" + e.Message.ToString());
+            throw new Exception("连接失败，请检查MySql服务是否打开。" + e.Message);
         }
     }
     // 关闭数据库
