@@ -19,6 +19,11 @@ public class Manager : MonoBehaviour {
     }
 
     public void FeaturesPanelDisplay() {
+        Invoke("Function",2);
+        
+    }
+
+    public void Function() {
         featuresPanel.SetActive(true);
     }
 }
