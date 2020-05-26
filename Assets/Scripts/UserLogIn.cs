@@ -49,6 +49,7 @@ public class UserLogIn : MonoBehaviour {
                 if (data[0] == passwordInput.text) {
                     mes.color = Color.green;
                     Message("登录成功");
+                    Manager.manager.FeaturesPanelDisplay();
                 }
                 else {
                     mes.color = Color.red;

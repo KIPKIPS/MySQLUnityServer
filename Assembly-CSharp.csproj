@@ -62,7 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\MySQLAccess.cs" />
+    <Compile Include="Assets\Scripts\PanelController.cs" />
     <Compile Include="Assets\Scripts\Test\MySQLToUnity.cs" />
     <Compile Include="Assets\Scripts\UserLogIn.cs" />
     <Compile Include="Assets\Scripts\UserSignUp.cs" />

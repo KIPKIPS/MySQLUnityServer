@@ -1172,7 +1172,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 181818657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1326915997}
+        m_MethodName: QuestionnaireBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &181818657
@@ -4376,6 +4387,7 @@ GameObject:
   - component: {fileID: 586211498}
   - component: {fileID: 586211500}
   - component: {fileID: 586211499}
+  - component: {fileID: 586211501}
   m_Layer: 5
   m_Name: LogSignPanel
   m_TagString: Untagged
@@ -4446,6 +4458,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586211497}
   m_CullTransparentMesh: 0
+--- !u!114 &586211501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586211497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74b1dbfc4385d54293badbaf5f863d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featuresPanel: {fileID: 1326915993}
 --- !u!1 &600324619
 GameObject:
   m_ObjectHideFlags: 0
@@ -7250,7 +7275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &963389290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7392,7 +7417,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1007210079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1326915997}
+        m_MethodName: ClassBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1007210079
@@ -9196,7 +9232,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1223750608}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1326915997}
+        m_MethodName: NewsBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1223750608
@@ -10308,6 +10355,7 @@ GameObject:
   - component: {fileID: 1326915994}
   - component: {fileID: 1326915996}
   - component: {fileID: 1326915995}
+  - component: {fileID: 1326915997}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -10377,6 +10425,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326915993}
   m_CullTransparentMesh: 0
+--- !u!114 &1326915997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326915993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c919468ee2350054781ececb49788049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 963389289}
+  - {fileID: 1965090025}
+  - {fileID: 740155917}
+  - {fileID: 1827068340}
 --- !u!1 &1333972325
 GameObject:
   m_ObjectHideFlags: 0
@@ -11038,7 +11103,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1381818514}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1326915997}
+        m_MethodName: GradeBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1381818514
